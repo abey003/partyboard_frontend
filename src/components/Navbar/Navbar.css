@@ -1,0 +1,119 @@
+/* Navbar styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #2575fc;
+  padding: 8px 20px;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.navbar-button {
+  background: none;
+  color: white;
+  border: 2px solid white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.navbar-button:hover {
+  background-color: white;
+  color: #2575fc;
+}
+
+.logout-button {
+  background-color: red;
+}
+
+/* Hamburger icon */
+.hamburger-icon {
+  display: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Make the navbar links hidden on small screens and only display the hamburger icon */
+.navbar-links {
+  display: flex;
+}
+
+.navbar-links.active {
+  display: flex;
+}
+
+.navbar-links a {
+  text-decoration: none;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .navbar-logo {
+    font-size: 1.2rem; /* Resize logo on smaller screens */
+    margin-bottom: 10px; /* Add space below the logo */
+  }
+
+  .navbar-links {
+    display: none; /* Hide links by default */
+    flex-direction: column; /* Stack links vertically */
+    width: 100%;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+
+  .navbar-links a {
+    padding: 12px 20px;
+    width: 90%; /* Make the links take full width */
+  }
+
+  .navbar-button {
+    font-size: 1rem; /* Smaller button size */
+    padding: 10px 15px;
+  }
+
+  .hamburger-icon {
+    display: block; /* Show hamburger icon on small screens */
+  }
+
+  .navbar-links.active {
+    display: flex; /* Show links when menu is active */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo {
+    font-size: 1rem; /* Further reduce logo size for very small screens */
+  }
+
+  .navbar-button {
+    font-size: 0.9rem; /* Further reduce button size */
+    padding: 8px 12px; /* Smaller padding for buttons */
+  }
+}

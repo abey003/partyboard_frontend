@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+
+/* Centering the loading container */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack spinner and text vertically */
+  height: 100vh; /* Full height of the viewport */
+  text-align: center;
+}
+
+.loading-spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #2575fc; /* Blue color for the spinner */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Optional: Styling for the "Loading..." text */
+.loading-container p {
+  margin-top: 20px;
+  color: #2575fc;
+  font-size: 1.2rem;
+}
