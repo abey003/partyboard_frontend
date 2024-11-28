@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
+import axios from 'axios';  // Import axios
 import './AddPartyPage.css';
 
 const AddPartyPage: React.FC = () => {
-  const [eventName, setEventName] = useState<string>(''); // State for event name
-  const [eventDate, setEventDate] = useState<string>(''); // State for event date
-  const [eventLocation, setEventLocation] = useState<string>(''); // State for event location
-  const [eventPoster, setEventPoster] = useState<string>(''); // State for event poster
+  // Define state for each form field
+  const [eventName, setEventName] = useState<string>(''); 
+  const [eventDate, setEventDate] = useState<string>(''); 
+  const [eventLocation, setEventLocation] = useState<string>(''); 
+  const [eventPoster, setEventPoster] = useState<string>(''); 
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Here you can handle the form submission (e.g., send data to the backend)
+    // Create the party data to send to the backend
     const partyData = {
       name: eventName,
       date: eventDate,
@@ -18,9 +21,22 @@ const AddPartyPage: React.FC = () => {
       poster: eventPoster,
     };
 
-    console.log(partyData); // For now, just log the data
+    try {
+      // Send the data to the backend using axios POST request
+      const response = await axios.post('http://localhost:5000/parties', partyData, {
+        headers: {
+          'Content-Type': 'application/json',  // Ensure the request is sent as JSON
+        },
+      });
 
-    // You can perform further actions like sending the data to the backend
+      // Handle successful response
+      console.log('Party added:', response.data);
+      alert('Party added successfully!');
+    } catch (error: any) {
+      // Handle error
+      console.error('Error adding party:', error);
+      alert('Error adding party');
+    }
   };
 
   return (
@@ -70,8 +86,8 @@ const AddPartyPage: React.FC = () => {
             type="text"
             id="event-poster"
             value={eventPoster}
-            onChange={(e) => setEventLocation(e.target.value)}
-            placeholder="Enter the event poster url"
+            onChange={(e) => setEventPoster(e.target.value)}
+            placeholder="Enter the event poster URL"
             required
           />
         </div>

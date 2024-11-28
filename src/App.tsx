@@ -5,6 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import LoginSignupPage from './components/LoginSignupPage/LoginSignupPage';
 import ViewPartyPage from './components/ViewPartyPage/ViewPartyPage';
 import AddPartyPage from './components/AddPartyPage/AddPartyPage';
+import ChatGPTPage from './components/ChatGPTPage/ChatGPTPage';
 // import './App.css'; // Make sure to import the CSS file for the spinner styles
 
 const App: React.FC = () => {
@@ -34,6 +35,10 @@ const App: React.FC = () => {
           element={
             isAuthenticated ? <AddPartyPage /> : <Navigate to="/login" replace />
           }
+        />
+        <Route 
+          path="/chat-gpt" 
+          element={<ChatGPTPage />}
         />
         <Route path="/login" element={<LoginSignupPage />} />
       </Routes>

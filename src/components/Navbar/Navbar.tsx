@@ -29,6 +29,9 @@ const Navbar: React.FC = () => {
           <Link to="/add-party" className="navbar-button">
             <FaPlusCircle style={{ marginRight: '8px' }} /> Add Party
           </Link>
+          <Link to="/chat-gpt" className="navbar-button">
+            Chat GPT
+          </Link>
           <Link
             to="/"
             className="navbar-button logout-button"

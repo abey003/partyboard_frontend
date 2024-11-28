@@ -1,0 +1,62 @@
+.chatgpt-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .chat-window {
+    border: 1px solid #ddd;
+    padding: 20px;
+    height: 400px;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .chat-window .user-message {
+    text-align: right;
+    margin-bottom: 10px;
+    background-color: #d1e7fd;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  .chat-window .chatgpt-message {
+    text-align: left;
+    margin-bottom: 10px;
+    background-color: #e9ecef;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  .chat-window .loading,
+  .chat-window .error {
+    font-style: italic;
+    color: gray;
+  }
+  
+  .chat-input {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .chat-input button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .chat-input button:disabled {
+    background-color: #ccc;
+  }
+  

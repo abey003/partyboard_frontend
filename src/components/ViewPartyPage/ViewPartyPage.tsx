@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios'; // Import axios
 import './ViewPartyPage.css';
 
 interface Party {
@@ -6,6 +7,7 @@ interface Party {
   name: string;
   date: string;
   location: string;
+  poster: string; // Add poster field to display the event image
 }
 
 const ViewPartyPage: React.FC = () => {
@@ -16,14 +18,8 @@ const ViewPartyPage: React.FC = () => {
   useEffect(() => {
     const fetchParties = async () => {
       try {
-        const response = await fetch('/api/parties'); // Replace with actual API URL
-        const data = await response.json();
-        
-        if (response.ok) {
-          setParties(data);
-        } else {
-          setError('Error fetching parties');
-        }
+        const response = await axios.get('http://localhost:5000/parties'); // URL to fetch parties from the backend
+        setParties(response.data); // Set the response data to state
       } catch (error) {
         setError('Error fetching parties');
       } finally {
@@ -58,6 +54,7 @@ const ViewPartyPage: React.FC = () => {
               <h2>{party.name}</h2>
               <p>Date: {party.date}</p>
               <p>Location: {party.location}</p>
+              {party.poster && <img src={party.poster} alt={party.name} className="party-poster" />}
             </div>
           ))}
         </div>

@@ -10,27 +10,35 @@
   
   .party-list {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 20px;
   }
-  
+
   .party-card {
-    background-color: #f4f4f4;
-    padding: 15px;
-    border-radius: 8px;
     border: 1px solid #ddd;
-    text-align: left;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
   }
-  
+
   .party-card h2 {
-    font-size: 1.5rem;
+    font-size: 1.5em;
     margin-bottom: 10px;
   }
-  
+
   .party-card p {
-    font-size: 1rem;
     margin: 5px 0;
   }
+
+  .party-poster {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+
   
   /* Centering the loading container */
   .loading-container {
