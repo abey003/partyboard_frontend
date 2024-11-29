@@ -4,15 +4,18 @@ import { useNavigate } from 'react-router-dom';
 import './LoginSignupPage.css';
 
 const LoginSignupPage: React.FC = () => {
-  const { loginWithRedirect, isAuthenticated } = useAuth0();
+  const { loginWithRedirect, isAuthenticated, user } = useAuth0(); // Access the `user` object
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isAuthenticated) {
+    if (isAuthenticated && user) {
+      // Store the user's email in local storage
+      localStorage.setItem('userEmail', user.email || '');
+
       // Redirect to View Party page after successful login
       navigate('/');
     }
-  }, [isAuthenticated, navigate]);
+  }, [isAuthenticated, user, navigate]);
 
   return (
     <div className="container">

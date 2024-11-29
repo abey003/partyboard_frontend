@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { Link } from 'react-router-dom';
-import { FaSignOutAlt, FaCalendarAlt, FaPlusCircle, FaBars } from 'react-icons/fa';  // Importing Font Awesome icons
+import { FaSignOutAlt, FaHome, FaPlusCircle, FaBars, FaComment } from 'react-icons/fa';
 import './Navbar.css';
 
 const Navbar: React.FC = () => {
@@ -24,10 +24,18 @@ const Navbar: React.FC = () => {
 
         <div className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
           <Link to="/" className="navbar-button">
-            <FaCalendarAlt style={{ marginRight: '8px' }} /> View Party
+            <FaHome style={{ marginRight: '8px' }} /> View Party
           </Link>
           <Link to="/add-party" className="navbar-button">
             <FaPlusCircle style={{ marginRight: '8px' }} /> Add Party
+          </Link>
+          <Link 
+            to="/my-posters" className="navbar-button">
+              My Posters
+          </Link>
+          <Link 
+            to="/chat" className="navbar-button">
+              <FaComment style={{ marginRight: '8px' }} /> Chat
           </Link>
           <Link to="/chat-gpt" className="navbar-button">
             Chat GPT

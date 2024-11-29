@@ -22,7 +22,7 @@ const ChatGPTPage: React.FC = () => {
     try {
       // Make a request to your backend or directly to OpenAI API
       const response = await axios.post(
-        'http://localhost:5000/api/chat',  // Your backend endpoint
+        'http://localhost:5000/api/chat',
         { message: userInput },
         { headers: { 'Content-Type': 'application/json' } }
       );

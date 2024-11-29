@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios'; // Import axios
+import axios from 'axios';
 import './ViewPartyPage.css';
 
 interface Party {
@@ -7,7 +7,7 @@ interface Party {
   name: string;
   date: string;
   location: string;
-  poster: string; // Add poster field to display the event image
+  poster: string;
 }
 
 const ViewPartyPage: React.FC = () => {

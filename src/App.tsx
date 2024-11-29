@@ -6,7 +6,9 @@ import LoginSignupPage from './components/LoginSignupPage/LoginSignupPage';
 import ViewPartyPage from './components/ViewPartyPage/ViewPartyPage';
 import AddPartyPage from './components/AddPartyPage/AddPartyPage';
 import ChatGPTPage from './components/ChatGPTPage/ChatGPTPage';
-// import './App.css'; // Make sure to import the CSS file for the spinner styles
+import ChatPage from './components/ChatPage/ChatPage';
+import MyPostersPage from './components/MyPostersPage/MyPostersPage';
+import './App.css';
 
 const App: React.FC = () => {
   const { isAuthenticated, isLoading } = useAuth0();
@@ -40,7 +42,17 @@ const App: React.FC = () => {
           path="/chat-gpt" 
           element={<ChatGPTPage />}
         />
-        <Route path="/login" element={<LoginSignupPage />} />
+        <Route 
+          path="/login" 
+          element={<LoginSignupPage />} 
+        />
+        <Route 
+          path="/chat" 
+          element={<ChatPage />} 
+        />
+        <Route 
+          path="/my-posters" 
+          element={<MyPostersPage />} />
       </Routes>
     </Router>
   );
